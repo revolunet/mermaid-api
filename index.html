@@ -22,12 +22,21 @@ textarea {
 Paste your mermaid data :<br/><br/>
 
 <textarea id="src">
-graph TD
-A[Christmas] -->|Get money| B(Go shopping)
-B --> C{Let me think}
-C -->|One| D[Laptop]
-C -->|Two| E[iPhone]
-C -->|Three| F[Car]
+graph TB
+
+PROJET["fa:fa-lightbulb Projet identifié"]
+VISION(fa:fa-calendar-alt Milestone)
+TEAM_METIER(fa:fa-users composition team métier + PO)
+OpenLabs(fa:fa-comments OpenLabs)
+
+PROJET-->TEAM_METIER
+TEAM_METIER-->OpenLabs
+OpenLabs-->VISION
+VISION-->UX(fa:fa-desktop UX)
+VISION-->data(fa:fa-database data)
+UX-->DEV(fa:fa-wrench Dev)
+data-->DEV
+DEV-->OpenLabs
 </textarea>
 
 <p>
