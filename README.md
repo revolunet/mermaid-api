@@ -12,6 +12,8 @@ Your mermaid graph is available here : `https://mermaid.now.sh/?q=[MERMAID-DATA]
 
 ⚠ Be sure to use `encodeURIComponent` to encode the data.
 
+⚠ Doesnt support fontawesome
+
 ![demo chart](chart)
 
 
