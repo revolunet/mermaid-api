@@ -1,0 +1,28 @@
+{
+  "name": "mermaid-api",
+  "version": "1.0.0",
+  "author": "Julien Bouquillon <julien@bouquillon.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev",
+    "deploy": "now && now alias && now scale"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/revolunet/mermaid-api.git"
+  },
+  "homepage": "https://revolunet.github.io/mermaid-api/",
+  "bugs": {
+    "url": "https://github.com/revolunet/mermaid-api/issues"
+  },
+  "dependencies": {
+    "mermaid.cli": "^0.4.6",
+    "micro": "^9.3.0",
+    "micro-query": "^0.2.0",
+    "node-exec-promise": "^1.0.2"
+  },
+  "devDependencies": {
+    "micro-dev": "^2.2.2"
+  }
+}

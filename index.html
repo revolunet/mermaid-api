@@ -1,0 +1,56 @@
+<title>Mermaid API example</title>
+<style>
+*{
+  font-family:Trebuchet Ms, Roboto, Verdana;
+}
+textarea {
+  font-size:12px;
+  width: 400px;
+  height:200px;
+}
+#svg-url {
+  color:green;
+}
+</style>
+
+<body>
+
+<h3>Mermaid API Example</h3>
+
+<p>Microservice to embed <a href="https://mermaidjs.github.io/">mermaid</a> charts in GitHub or whatever static markdown</p>
+
+Paste your mermaid data :<br/><br/>
+
+<textarea id="src">
+graph TD
+A[Christmas] -->|Get money| B(Go shopping)
+B --> C{Let me think}
+C -->|One| D[Laptop]
+C -->|Two| E[iPhone]
+C -->|Three| F[Car]
+</textarea>
+
+<p>
+  Your image url :<br/><br/>
+
+&lt;img width="400" height="600" src="<span id="svg-url"></span>"/&gt;
+
+</p>
+
+<img title="Mermaid graph loading" id="demo-img" width="400" height="600" src=""/>
+
+</body>
+
+<script>
+  const apiUrl = "" // local demo
+  const textArea = document.querySelector('#src')
+  const demoUrl = document.querySelector('#svg-url')
+  const demoImg = document.querySelector('#demo-img')
+  const updateImages = (data) => {
+    const imgUrl = apiUrl + "/" + `?width=400&height=600&q=${encodeURIComponent(data)}`
+    demoUrl.innerText = imgUrl;
+    demoImg.src = imgUrl
+  }
+  textArea.addEventListener("keyup", e => updateImages(e.target.value))
+  updateImages(textArea.value)
+</script>
