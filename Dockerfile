@@ -11,9 +11,17 @@ RUN apt-get install -yyq gconf-service lsb-release wget xdg-utils
 # and fonts
 RUN apt-get install -yyq fonts-liberation
 
-COPY . /code
+# Add user so we don't need --no-sandbox.
+RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
+    && mkdir -p /home/pptruser \
+    && chown -R pptruser:pptruser /home/pptruser
 
-WORKDIR /code
+# Run everything after as non-privileged user.
+USER pptruser
+
+COPY . /home/pptruser
+
+WORKDIR /home/pptruser
 
 RUN npm install
 

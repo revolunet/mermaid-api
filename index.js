@@ -3,6 +3,7 @@ const query = require("micro-query");
 const exec = require("node-exec-promise").exec;
 
 const TIMEOUT = 3000;
+const PUPPETEER_CONFIG = "./puppeteerConfig.json";
 
 const getTmpPath = () => `/tmp/${Math.random()}.mmd`;
 
@@ -41,10 +42,13 @@ module.exports = async (req, res) => {
     const textPath = getTmpPath();
     const svgPath = `${textPath}.svg`;
     const write = await writeFile(textPath, q);
-    const cmd = `./node_modules/.bin/mmdc -i ${textPath} -o ${svgPath} -w ${width} -H ${height}`;
+    const cmd = `./node_modules/.bin/mmdc -i ${textPath} -o ${svgPath} -w ${width} -H ${height} -p ${PUPPETEER_CONFIG}`;
     return execWithTimeout(cmd).then(
       ({ stdout, stderr }) => readFile(svgPath),
-      err => svgError
+      err => {
+        console.log(`ERR: ${err} on ${cmd}`);
+        return svgError;
+      }
     );
   } else {
     res.setHeader("Content-Type", "text/html");

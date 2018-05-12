@@ -4,7 +4,7 @@
   "author": "Julien Bouquillon <julien@bouquillon.com>",
   "license": "MIT",
   "scripts": {
-    "start": "micro",
+    "start": "echo 'http://0.0.0.0:3030' && micro -l tcp://0.0.0.0:3030",
     "dev": "micro-dev",
     "deploy": "now && now alias && now scale"
   },
