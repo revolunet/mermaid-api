@@ -6,7 +6,7 @@
   "scripts": {
     "start": "echo 'http://0.0.0.0:3030' && micro -l tcp://0.0.0.0:3030",
     "dev": "micro-dev",
-    "deploy": "now && now alias && now scale"
+    "deploy": "now && now alias && now scale mermaid.now.sh bru1 1 1"
   },
   "repository": {
     "type": "git",

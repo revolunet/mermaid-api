@@ -2,7 +2,7 @@ const fs = require("fs");
 const query = require("micro-query");
 const exec = require("node-exec-promise").exec;
 
-const TIMEOUT = 3000;
+const TIMEOUT = 10000;
 const PUPPETEER_CONFIG = "./puppeteerConfig.json";
 
 const getTmpPath = () => `/tmp/${Math.random()}.mmd`;
