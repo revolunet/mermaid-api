@@ -12,9 +12,7 @@ Your mermaid graph is available here : `https://mermaid.now.sh/?q=[MERMAID-DATA]
 
 ⚠ Be sure to use `encodeURIComponent` to encode the data.
 
-⚠ Doesnt support fontawesome
-
-![demo chart](chart)
+⚠ Doesnt support fontawesome ([pending PR](https://github.com/mermaidjs/mermaid.cli/pull/38))
 
 
-[chart]: https://mermaid-api.now.sh/?q=/?width=400&height=600&q=graph%20TD%0AA%5BChristmas%5D%20--%3E%7CGet%20money%7C%20B(Go%20shopping)%0AB%20--%3E%20C%7BLet%20me%20think%7D%0AC%20--%3E%7COne%7C%20D%5BLaptop%5D%0AC%20--%3E%7CTwo%7C%20E%5BiPhone%5D%0AC%20--%3E%7CThree%7C%20F%5BCar%5D%0A
+![demo chart](https://mermaid.now.sh/?width=1200&height=1600&q=graph%20TD%0AA%5BChristmas%5D%20--%3E%7CGet%20money%7C%20B(Go%20shopping)%0AB%20--%3E%20C%7BLet%20me%20think%7D%0AC%20--%3E%7COne%7C%20D%5BLaptop%5D%0AC%20--%3E%7CTwo%7C%20E%5BiPhone%5D%0AC%20--%3E%7CThree%7C%20F%5BCar%5D%0A)

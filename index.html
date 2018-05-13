@@ -59,7 +59,7 @@ DEV-->OpenLabs
   const demoImg = document.querySelector('#demo-img')
   const updateImages = (data) => {
     const imgUrl = apiUrl + "/" + `?width=400&height=600&q=${encodeURIComponent(data)}`
-    demoUrl.innerText = imgUrl;
+    demoUrl.innerText = `https://mermaid.now.sh/${imgUrl}`;
     demoImg.src = imgUrl
   }
   textArea.addEventListener("keyup", e => updateImages(e.target.value))
