@@ -24,31 +24,30 @@ textarea {
 Paste your mermaid data :<br/><br/>
 
 <textarea id="src">
-graph TB
-
-PROJET["fa:fa-lightbulb Projet identifié -"]
-VISION(fa:fa-calendar-alt Milestone)
-TEAM_METIER("fa:fa-users composition team métier + PO. -")
-OpenLabs(fa:fa-comments OpenLabs)
-
-PROJET-->TEAM_METIER
-TEAM_METIER-->OpenLabs
-OpenLabs-->VISION
-VISION-->UX(fa:fa-desktop UX)
-VISION-->data(fa:fa-database data)
-UX-->DEV(fa:fa-wrench Dev)
-data-->DEV
-DEV-->OpenLabs
+graph TD
+subgraph Baie réseau
+RR(Switch réseau)-->|RJ45|E
+A1(Alim 5V micro USB)-->E(Player Audio raspi)
+end
+subgraph Salle de jeu
+E-->|cable audio|F(HP amplifié 1)
+A2(Alim PC16)-->F
+F-.->|cable audio|G(HP amplifié 2)
+A3(Alim PC16)-->G
+W1(Webcam D5020L)
+R1(Arrivée RJ45)-->W1
+A4(Alim PC16)-->W1
+end
 </textarea>
 
 <p>
   Your image url :<br/><br/>
 
-&lt;img width="400" height="600" src="<span id="svg-url"></span>"/&gt;
+&lt;img width="800" height="600" src="<span id="svg-url"></span>"/&gt;
 
 </p>
 
-<img title="Mermaid graph loading" id="demo-img" width="400" height="600" src=""/>
+<img title="Mermaid graph loading" id="demo-img" width="800" height="600" src=""/>
 
 </body>
 

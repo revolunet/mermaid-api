@@ -15,4 +15,4 @@ Your mermaid graph is available here : `https://mermaid.now.sh/?q=[MERMAID-DATA]
 ⚠ Doesnt support fontawesome ([pending PR](https://github.com/mermaidjs/mermaid.cli/pull/38))
 
 
-![demo chart](https://mermaid.now.sh/?width=1200&height=1600&q=graph%20TD%0AA%5BChristmas%5D%20--%3E%7CGet%20money%7C%20B(Go%20shopping)%0AB%20--%3E%20C%7BLet%20me%20think%7D%0AC%20--%3E%7COne%7C%20D%5BLaptop%5D%0AC%20--%3E%7CTwo%7C%20E%5BiPhone%5D%0AC%20--%3E%7CThree%7C%20F%5BCar%5D%0A)
+![demo chart](https://mermaid.now.sh/?width=800&height=600&q=graph%20TD%0Asubgraph%20Baie%20r%C3%A9seau%0ARR(Switch%20r%C3%A9seau)--%3E%7CRJ45%7CE%0AA1(Alim%205V%20micro%20USB)--%3EE(Player%20Audio%20raspi)%0Aend%0Asubgraph%20Salle%20de%20jeu%0AE--%3E%7Ccable%20audio%7CF(HP%20amplifi%C3%A9%201)%0AA2(Alim%20PC16)--%3EF%0AF-.-%3E%7Ccable%20audio%7CG(HP%20amplifi%C3%A9%202)%0AA3(Alim%20PC16)--%3EG%0AW1(Webcam%20D5020L)%0AR1(Arriv%C3%A9e%20RJ45)--%3EW1%0AA4(Alim%20PC16)--%3EW1%0Aend)
