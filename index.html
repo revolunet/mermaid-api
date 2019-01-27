@@ -23,7 +23,10 @@ textarea {
 
 Paste your mermaid data :<br/><br/>
 
-<textarea id="src">
+<table width="100%">
+  <tr>
+    <td width="50%">
+      <textarea id="src" style="width:100%;height:600px;font-size:1.2em">
 graph TD
 subgraph Baie réseau
 RR(Switch réseau)-->|RJ45|E
@@ -38,7 +41,13 @@ W1(Webcam D5020L)
 R1(Arrivée RJ45)-->W1
 A4(Alim PC16)-->W1
 end
-</textarea>
+      </textarea>
+    </td>
+    <td width="50%">
+      <img title="Mermaid graph loading" id="demo-img" width="100%" height="600" src=""/>
+    </td>
+  </tr>
+</table>
 
 <p>
   Your image url :<br/><br/>
@@ -47,20 +56,18 @@ end
 
 </p>
 
-<img title="Mermaid graph loading" id="demo-img" width="800" height="600" src=""/>
-
 </body>
 
 <script>
-  const apiUrl = "" // local demo
-  const textArea = document.querySelector('#src')
-  const demoUrl = document.querySelector('#svg-url')
-  const demoImg = document.querySelector('#demo-img')
-  const updateImages = (data) => {
-    const imgUrl = apiUrl + "/" + `?width=400&height=600&q=${encodeURIComponent(data)}`
-    demoUrl.innerText = `https://mermaid.now.sh/${imgUrl}`;
-    demoImg.src = imgUrl
-  }
-  textArea.addEventListener("keyup", e => updateImages(e.target.value))
-  updateImages(textArea.value)
+const apiUrl = ""; // local demo
+const textArea = document.querySelector("#src");
+const demoUrl = document.querySelector("#svg-url");
+const demoImg = document.querySelector("#demo-img");
+const updateImages = data => {
+  const imgUrl = `${apiUrl}/?width=400&height=600&q=${encodeURIComponent(data)}`
+  demoUrl.innerText = `https://mermaid.now.sh/${imgUrl}`;
+  demoImg.src = imgUrl;
+};
+textArea.addEventListener("keyup", e => updateImages(e.target.value));
+updateImages(textArea.value);
 </script>
