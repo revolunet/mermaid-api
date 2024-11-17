@@ -1,14 +1,8 @@
-# Mermaid API Example
+# Mermaid API Example / DEPRECATED
 
 Microservice to embed [mermaid](https://mermaidjs.github.io/) charts in GitHub or whatever static markdown
 
 Use docker and pupetteer to run [mermaid-cli](https://github.com/fardog/mermaid-cli)
-
-Demo : https://mermaid.now.sh
-
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/revolunet/mermaid-api)
-
-Your mermaid graph is available here : `https://mermaid.now.sh/?q=[MERMAID-DATA]`.
 
 ⚠ Be sure to use `encodeURIComponent` to encode the data.
 
